@@ -1,0 +1,273 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>极速设计系统V7 | 全案解决方案</title>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+    <style>
+        :root {
+            --primary: #2D3436;
+            --secondary: #4ECDC4;
+            --accent: #FF6B6B;
+            --bg: #f8f9fa;
+        }
+
+        body {
+            background: var(--bg);
+            line-height: 1.6;
+            color: #444;
+            font-family: 'Segoe UI', system-ui;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 2rem 1rem;
+        }
+
+        /* 首屏数据展示 */
+        .hero-section {
+            background: linear-gradient(135deg, var(--primary), #3d4a4d);
+            color: white;
+            padding: 4rem 1rem;
+            text-align: center;
+            border-radius: 0 0 30px 30px;
+        }
+
+        .stats-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 1.5rem;
+            padding: 2rem 0;
+        }
+
+        .stat-card {
+            padding: 2rem;
+            background: rgba(255,255,255,0.1);
+            border-radius: 15px;
+            backdrop-filter: blur(10px);
+        }
+
+        /* 策略卡片 */
+        .strategy-card {
+            background: white;
+            padding: 2rem;
+            margin: 2rem 0;
+            border-radius: 15px;
+            box-shadow: 0 5px 25px rgba(0,0,0,0.06);
+            border-left: 4px solid transparent;
+            transition: all 0.3s;
+        }
+        .strategy-card:hover {
+            transform: translateY(-5px);
+            border-left-color: var(--secondary);
+        }
+
+        /* 增强版时间轴 */
+        .timeline-system {
+            position: relative;
+            padding: 3rem 0;
+        }
+
+        /* 阶段容器 */
+        .phase-container {
+            margin: 2rem 0;
+            background: white;
+            border-radius: 15px;
+            box-shadow: 0 5px 25px rgba(0,0,0,0.06);
+        }
+
+        /* 阶段标题 */
+        .phase-header {
+            padding: 1.5rem;
+            cursor: pointer;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            border-bottom: 1px solid #eee;
+        }
+        .phase-header:hover {
+            background: #f8f9fa;
+        }
+
+        /* 执行详情 */
+        .execution-detail {
+            padding: 0 1.5rem;
+            max-height: 0;
+            overflow: hidden;
+            transition: max-height 0.3s ease-out;
+        }
+
+        /* 执行要点 */
+        .execution-point {
+            padding: 1.2rem;
+            margin: 1rem 0;
+            background: rgba(255,107,107,0.05);
+            border-left: 3px solid var(--accent);
+            border-radius: 4px;
+        }
+
+        /* 时间节点标记 */
+        .time-tag {
+            display: inline-block;
+            padding: 0.3rem 0.8rem;
+            background: var(--secondary);
+            color: white;
+            border-radius: 12px;
+            font-size: 0.85em;
+            margin: 0.5rem 0;
+        }
+
+        @media (max-width: 768px) {
+            .container {
+                padding: 1rem;
+            }
+            .phase-header {
+                flex-direction: column;
+                align-items: flex-start;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- 首屏核心数据 -->
+    <section class="hero-section">
+        <div class="container">
+            <h1>极速设计全案系统V7</h1>
+            <p>策略与执行深度整合解决方案</p>
+            
+            <div class="stats-grid">
+                <div class="stat-card">
+                    <h3>72小时</h3>
+                    <p>极速出图保障</p>
+                </div>
+                <div class="stat-card">
+                    <h3>30万+</h3>
+                    <p>年度目标拆解</p>
+                </div>
+                <div class="stat-card">
+                    <h3>100+</h3>
+                    <p>标准化执行节点</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 策略模块 -->
+    <div class="container">
+        <!-- 产品体系 -->
+        <div class="strategy-card">
+            <h2><i class="fas fa-cube" style="color: var(--accent);"></i> 产品矩阵</h2>
+            <div class="phase-container">
+                <div class="phase-header" onclick="togglePhase(this)">
+                    <h3>爆款套餐系统</h3>
+                    <i class="fas fa-chevron-down"></i>
+                </div>
+                <div class="execution-detail">
+                    <div class="execution-point">
+                        <span class="time-tag">入门款</span>
+                        <p><strong>99元极速设计包：</strong><br>
+                        • 1小时上门量房<br>
+                        • 2套平面方案（标准化模板）<br>
+                        • 主材选购白名单</p>
+                    </div>
+                    <div class="execution-point">
+                        <span class="time-tag">旗舰款</span>
+                        <p><strong>2999全屋套餐：</strong><br>
+                        • 72小时全套施工图<br>
+                        • 合作施工队优先派单<br>
+                        • 建材市场专属折扣</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- 执行时间轴 -->
+        <div class="strategy-card">
+            <h2><i class="fas fa-project-diagram" style="color: var(--secondary);"></i> 执行时间轴</h2>
+            
+            <!-- 第一阶段 -->
+            <div class="phase-container">
+                <div class="phase-header" onclick="togglePhase(this)">
+                    <h3>第一阶段：基础建设（1-4周）</h3>
+                    <i class="fas fa-chevron-down"></i>
+                </div>
+                <div class="execution-detail">
+                    <div class="execution-point">
+                        <span class="time-tag">第1周</span>
+                        <p><strong>线上矩阵搭建：</strong><br>
+                        • 注册抖音/快手企业号<br>
+                        • 设计统一视觉识别系统<br>
+                        • 建立内容发布日历模板</p>
+                    </div>
+                    <div class="execution-point">
+                        <span class="time-tag">第2-3周</span>
+                        <p><strong>合作网络构建：</strong><br>
+                        • 筛选本地中小装修公司<br>
+                        • 制定阶梯分成方案<br>
+                        • 电子签约系统部署</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- 第二阶段 -->
+            <div class="phase-container">
+                <div class="phase-header" onclick="togglePhase(this)">
+                    <h3>第二阶段：爆破执行（5-8周）</h3>
+                    <i class="fas fa-chevron-down"></i>
+                </div>
+                <div class="execution-detail">
+                    <div class="execution-point">
+                        <span class="time-tag">第5周</span>
+                        <p><strong>线下驻点实施：</strong><br>
+                        • 建材市场场地谈判<br>
+                        • 驻点物料清单准备<br>
+                        • 现场咨询话术培训</p>
+                    </div>
+                    <div class="execution-point">
+                        <span class="time-tag">第6-8周</span>
+                        <p><strong>套餐推广：</strong><br>
+                        • 制作VR全景样板间<br>
+                        • 朋友圈标准化发布节奏<br>
+                        • 签约客户建档管理</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- 第三阶段 -->
+            <div class="phase-container">
+                <div class="phase-header" onclick="togglePhase(this)">
+                    <h3>第三阶段：系统优化（9-12周）</h3>
+                    <i class="fas fa-chevron-down"></i>
+                </div>
+                <div class="execution-detail">
+                    <div class="execution-point">
+                        <span class="time-tag">第9周</span>
+                        <p><strong>流程标准化：</strong><br>
+                        • 制定《极速设计手册》<br>
+                        • 建立外包协作体系<br>
+                        • 云协作系统部署</p>
+                    </div>
+                    <div class="execution-point">
+                        <span class="time-tag">第10-12周</span>
+                        <p><strong>客户裂变系统：</strong><br>
+                        • 转介绍返现机制落地<br>
+                        • 积分兑换系统开发<br>
+                        • 年度维护计划制定</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        function togglePhase(header) {
+            const content = header.parentElement.querySelector('.execution-detail');
+            const icon = header.querySelector('i');
+            content.style.maxHeight = content.style.maxHeight ? null : content.scrollHeight + "px";
+            icon.classList.toggle('fa-chevron-up');
+        }
+    </script>
+</body>
+</html>
